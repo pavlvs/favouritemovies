@@ -1,0 +1,100 @@
+* {
+    font-family: sans-serif;
+}
+
+header {
+    height: 50px;
+    border-bottom: 1px solid gray;
+    background-color: #F1F1F1;
+}
+
+header h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 50px;
+    line-height: 50px;
+}
+
+.select_users {
+    position: absolute;
+    right: 65px;
+    top: 15px;
+}
+
+.select_users h2 a {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: black;
+    text-decoration: none;
+}
+
+.select_users h2 a:hover {
+    color: #A32824;
+}
+
+ul.users,
+ul.admin {
+    position: absolute;
+    right: 0;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+    background-color: #F1F1F1;
+}
+
+ul.users {
+    width: 200px;
+}
+
+ul.admin {
+    width: 150px;
+    display: none;
+}
+
+ul.users a,
+ul.admin a {
+    text-decoration: none;
+    color: #000;
+}
+
+.users li a,
+.admin li a {
+    font-size: 0.75em;
+    padding: 5px;
+    display: block;
+}
+
+.users li a:hover,
+.admin li a:hover {
+    background-color: #A32824;
+    color: #FFF;
+}
+
+.favs_list {
+    float: left;
+    width: 175px;
+    margin-left: 45px;
+    border: 1px solid blue;
+}
+
+ul.favs {
+    width: 170px;
+}
+
+.movie_list,
+.movie_single {
+    margin-left: 225px;
+    width: 610px;
+    border: 1px solid red;
+}
+
+.thumbnail {
+    width: 178px;
+    height: 100px;
+}
+
+footer {
+    clear: both;
+    height: 60px;
+    border: 1px solid green;
+    margin-top: 30px;
+}
