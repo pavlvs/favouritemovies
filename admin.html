@@ -12,62 +12,62 @@
     <header>
         <h1>Instant Database Project</h1>
     </header>
-    <nav>
-        <div>
+    <nav class="navigation">
+        <div class="select_users">
             <h2><a href="#">Logged-in user's name</a></h2>
         </div>
-        <ul>
+        <ul class="users_menu">
             <li><a href="#">List of other users</a></li>
             <li><a href="#">List of other users</a></li>
             <li><a href="#">List of other users</a></li>
         </ul>
-        <ul>
+        <ul class="admin_menu">
             <li><a href="#">Manage users</a></li>
             <li><a href="#">Manage movies</a></li>
         </ul>
     </nav>
-    <nav>
-        <h2>Favourites</h2>
-        <ul>
-            <li><a href="#">Movie Title</a></li>
-            <li><a href="#">Movie Title</a></li>
-            <li><a href="#">Movie Title</a></li>
-        </ul>
-    </nav>
-    <section>
-        <div>
+    <!-- <nav class="favs_list">
+    <h2>Favourites</h2>
+    <ul class="favs">
+        <li><a href="#">Movie Title</a></li>
+        <li><a href="#">Movie Title</a></li>
+        <li><a href="#">Movie Title</a></li>
+    </ul>
+</nav> -->
+    <section class="admin">
+        <div class="admin_users">
             <h2>Manage users</h2>
-            <table>
+            <table class="admin_table">
                 <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Insert/delete</th>
+                    <th class="data_col">Firstname</th>
+                    <th class="data_col">Lastname</th>
+                    <th class="admin_col">Delete</th>
                 </tr>
-                <tr>
-                    <td><input type="text" name="firstname" value="Albert"></td>
-                    <td><input type="text" name="lastname" value="Smith"></td>
-                    <td>Insert/delete</td>
+                <tr class="data_row">
+                    <td><input class="data" type="text" name="firstname" value="Albert"></td>
+                    <td><input class="data" type="text" name="lastname" value="Smith"></td>
+                    <td class="deletecell">Delete</td>
                 </tr>
-                <tr>
-                    <td><input type="text" name="firstname" value="Bob"></td>
-                    <td><input type="text" name="lastname" value="Miller"></td>
-                    <td>Insert/delete</td>
+                <tr class="data_row">
+                    <td><input class="data" type="text" name="firstname" value="Bob"></td>
+                    <td><input class="data" type="text" name="lastname" value="Miller"></td>
+                    <td class="deletecell">Delete</td>
                 </tr>
-                <tr>
-                    <td><input type="text" name="firstname" value="Charles"></td>
-                    <td><input type="text" name="lastname" value="Mason"></td>
-                    <td>Insert/delete</td>
+                <tr class="data_row">
+                    <td><input class="data" type="text" name="firstname" value="Charles"></td>
+                    <td><input class="data" type="text" name="lastname" value="Mason"></td>
+                    <td class="deletecell">Delete</td>
                 </tr>
-                <tr>
-                    <td><input type="text" name="firstname" value="David"></td>
-                    <td><input type="text" name="lastname" value="Brooks"></td>
-                    <td>Insert/delete</td>
+                <tr class="data_row">
+                    <td><input class="data" type="text" name="firstname" value=""></td>
+                    <td><input class="data" type="text" name="lastname" value=""></td>
+                    <td class="insertcell">Insert</td>
                 </tr>
             </table>
         </div>
     </section>
     <footer>
-        <p>Instand update database project by <a href="mailto:pavlvsxavier@gmail.com">Pavls</a></p>
+        <p>Instant update database project by <a href="mailto:pavlvsxavier@gmail.com">Pavlvs</a></p>
     </footer>
 </body>
 

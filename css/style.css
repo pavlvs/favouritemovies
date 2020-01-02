@@ -32,8 +32,8 @@ header h1 {
     color: #A32824;
 }
 
-ul.users,
-ul.admin {
+ul.users_menu,
+ul.admin_menu {
     position: absolute;
     right: 0;
     border-left: 1px solid gray;
@@ -41,32 +41,92 @@ ul.admin {
     background-color: #F1F1F1;
 }
 
-ul.users {
+ul.users_menu {
     width: 200px;
 }
 
-ul.admin {
+ul.admin_menu {
     width: 150px;
     display: none;
 }
 
-ul.users a,
-ul.admin a {
+ul.users_menu a,
+ul.admin_menu a {
     text-decoration: none;
     color: #000;
 }
 
-.users li a,
-.admin li a {
+.users_menu li a,
+.admin_menu li a {
     font-size: 0.75em;
     padding: 5px;
     display: block;
 }
 
-.users li a:hover,
-.admin li a:hover {
+.users_menu li a:hover,
+.admin_menu li a:hover {
     background-color: #A32824;
     color: #FFF;
+}
+
+.admin_users {
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.admin_users h2 {
+    font-size: 1.25em;
+    margin-bottom: 20px;
+}
+
+.admin_table {
+    border-spacing: 2px;
+    border-collapse: separate;
+}
+
+.admin_table th {
+    font-weight: bold;
+    -ms-text-align-last: left;
+    text-align-last: left;
+    background-color: #F1F1F1;
+}
+
+.admin_table th,
+/* .admin_table td, */
+.admin_table input {
+    height: 35px;
+    width: 200px;
+}
+
+.admin_table th,
+.admin_table input {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.admin_table th.data_col,
+.admin_table th.admin_col {
+    line-height: 35px;
+}
+
+.admin_table input {
+    font-size: 0.75em;
+    height: 35px;
+}
+
+.admin_table input:focus {
+    background-color: #FEE5AC;
+}
+
+.admin_table th,
+.admin_table td {
+    border: 1px solid #000;
+}
+
+.admin_table th.admin_col,
+td.deletecell,
+td.insertcell {
+    width: 80px;
 }
 
 .favs_list {
@@ -175,7 +235,7 @@ ul.favs li a:hover {
 
 .movie_single .actions {
     position: relative;
-    height: 37px;
+    height: 35px;
     border-bottom: 1px dotted #ccc;
 }
 
