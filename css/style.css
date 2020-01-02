@@ -152,6 +152,49 @@ ul.favs li a:hover {
     padding-right: 20px;
 }
 
+.movie_player {
+    width: 608px;
+    height: 344px;
+}
+
+.movie_single h3 {
+    font-size: 1.3em;
+    padding: 10px;
+}
+
+.movie_single p {
+    font-size: 0.8em;
+    padding: 10px;
+}
+
+.movie_single .description {
+    font-size: 0.75em;
+    min-height: 80px;
+    text-align: justify;
+}
+
+.movie_single .actions {
+    position: relative;
+    height: 37px;
+    border-bottom: 1px dotted #ccc;
+}
+
+.actions .add_remove {
+    position: absolute;
+    right: 10px;
+}
+
+.actions .add_remove p {
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #999;
+}
+
+.actions .add_remove p:hover {
+    color: #000;
+    border-bottom: 3px solid #993300;
+}
+
 .welcome {
     font-size: 0.8em;
     padding: 10px 10px 20px 10px;
