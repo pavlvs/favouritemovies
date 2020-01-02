@@ -73,7 +73,6 @@ ul.admin a {
     float: left;
     width: 175px;
     margin-left: 45px;
-    border: 1px solid blue;
 }
 
 .favs_list h2 {
@@ -168,6 +167,23 @@ ul.favs li a:hover {
 footer {
     clear: both;
     height: 60px;
-    border: 1px solid green;
+    border-top: 1px dotted gray;
+    border-bottom: 1px dotted gray;
     margin-top: 30px;
+}
+
+footer p {
+    line-height: 60px;
+    margin-left: 50px;
+    font-size: .7em;
+    font-weight: bold;
+}
+
+footer a {
+    font-size: inherit;
+    color: #000;
+}
+
+footer a:hover {
+    color: #A32824;
 }
