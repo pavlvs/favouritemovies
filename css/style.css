@@ -267,6 +267,100 @@ ul.favs li a:hover {
     width: 178px;
 }
 
+.trash-hover,
+.trash,
+.delete,
+.delete-hover,
+.fav,
+.fav-hover,
+.insert,
+.insert-hover,
+.arrow,
+.arrow-hover,
+.profile-out,
+.profile-in,
+.success {
+    background: url(../images/sprites.png) no-repeat;
+}
+
+.trash-hover {
+    background-position: 0 -61px;
+    width: 60px;
+    height: 60px;
+}
+
+.trash {
+    background-position: 0 0;
+    width: 60px;
+    height: 60px;
+}
+
+.delete {
+    background-position: 0 -130px;
+    width: 20px;
+    height: 20px;
+}
+
+.delete-hover {
+    background-position: -21px -130px;
+    width: 20px;
+    height: 20px;
+}
+
+.fav {
+    background-position: 0 -154px;
+    width: 20px;
+    height: 20px;
+}
+
+.fav-hover {
+    background-position: -21px -154px;
+    width: 20px;
+    height: 20px;
+}
+
+.insert {
+    background-position: 0 -177px;
+    width: 20px;
+    height: 20px;
+}
+
+.insert-hover {
+    background-position: -21px -177px;
+    width: 20px;
+    height: 20px;
+}
+
+.arrow {
+    background-position: -47px -132px;
+    width: 10px;
+    height: 10px;
+}
+
+.arrow-hover {
+    background-position: -47px -142px;
+    width: 10px;
+    height: 10px;
+}
+
+.profile-out {
+    background-position: 0 -199px;
+    width: 30px;
+    height: 30px;
+}
+
+.profile-in {
+    background-position: -33px -199px;
+    width: 30px;
+    height: 30px;
+}
+
+.success {
+    background-position: -44px -177px;
+    width: 20px;
+    height: 20px;
+}
+
 footer {
     border-bottom: 1px dotted gray;
     border-top: 1px dotted gray;
