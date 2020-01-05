@@ -51,9 +51,6 @@ require_once 'includes/nav.inc.php';
         </table>
     </div>
 </section>
-<footer>
-    <p>Instant update database project by <a href="mailto:pavlvsxavier@gmail.com">Pavlvs</a></p>
-</footer>
-</body>
-
-</html>
+<?php
+require_once 'includes/footer.inc.php';
+?>
