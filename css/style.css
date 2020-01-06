@@ -42,11 +42,11 @@ ul.admin_menu {
 }
 
 ul.users_menu {
+    display: none;
     width: 200px;
 }
 
 ul.admin_menu {
-    display: none;
     width: 150px;
 }
 
@@ -394,4 +394,18 @@ footer a {
 
 footer a:hover {
     color: #A32824;
+}
+
+.alert {
+    color: red;
+}
+
+.message {
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.message h2 {
+    font-size: 1.25em;
+    font-weight: bold;
 }

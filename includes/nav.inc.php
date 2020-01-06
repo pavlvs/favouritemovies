@@ -10,7 +10,7 @@
         <li><a href="#">List of other users</a></li>
     </ul>
     <ul class="admin_menu">
-        <li><a href="#">Manage users</a></li>
-        <li><a href="#">Manage movies</a></li>
+        <li><a href="admin.php?page=users">Manage users</a></li>
+        <li><a href="admin.php?page=movies">Manage movies</a></li>
     </ul>
 </nav>
