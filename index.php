@@ -1,4 +1,5 @@
 <?php
+require_once 'includes/connect.inc.php';
 require_once 'includes/get-variables.inc.php';
 require_once 'includes/head.inc.php';
 require_once 'includes/header.inc.php';

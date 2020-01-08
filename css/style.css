@@ -42,11 +42,11 @@ ul.admin_menu {
 }
 
 ul.users_menu {
-    display: none;
     width: 200px;
 }
 
 ul.admin_menu {
+    display: none;
     width: 150px;
 }
 
