@@ -1,4 +1,9 @@
 <?php
+
+// Functions
+require_once 'functions/show-users.fn.php';
+
+// Includes
 require_once 'includes/connect.inc.php';
 require_once 'includes/get-variables.inc.php';
 require_once 'includes/head.inc.php';
