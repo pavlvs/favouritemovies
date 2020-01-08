@@ -69,6 +69,21 @@ ul.admin_menu a {
     color: #FFF;
 }
 
+.users_menu li.logout {
+    border-top: 1px solid grey;
+    text-transform: uppercase;
+}
+
+.users_menu li.logout a {
+    background-color: #fff;
+    color: #000;
+}
+
+.users_menu li.logout a:hover {
+    background-color: #000;
+    color: #FFF;
+}
+
 .admin_users {
     margin-left: 50px;
     margin-top: 40px;

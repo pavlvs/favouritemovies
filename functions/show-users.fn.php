@@ -2,18 +2,58 @@
 
 // Called in nav.inc.php
 
-function showUsers() {
-	global $db;
-	$stmt = $db->prepare("SELECT * FROM `movie_goers` ORDER BY `firstname`");
+function showUsers($data) {
+	global $db, $userID;
+
+	switch ($data) {
+	case "all":
+		$stmt = $db->prepare("SELECT * FROM `movie_goers` ORDER BY `firstname`");
+		$tag = "li";
+		break;
+
+	case "current":
+		$stmt = $db->prepare("SELECT * FROM `movie_goers` WHERE `user_id` = ?");
+		$stmt->bind_param('i', $userID);
+		$tag = "h2";
+		break;
+
+	case "others":
+		$stmt = $db->prepare("SELECT * FROM `movie_goers` WHERE `user_id` != ? ORDER BY `firstname`");
+		$stmt->bind_param('i', $userID);
+		$tag = "li";
+		break;
+
+	default:
+		# code...
+		break;
+	}
+
 	$stmt->bind_result($id, $firstname, $lastname);
 	$stmt->execute();
-	$output = "<ul class='users_menu'>";
+
+	if ($tag == 'li') {
+		$output = "<ul class='users_menu'>";
+	} else {
+		$output = "";
+	}
+
 	while ($stmt->fetch()) {
 		$firstname = htmlentities($firstname, ENT_QUOTES, "UTF-8");
 		$lastname = htmlentities($lastname, ENT_QUOTES, "UTF-8");
-		$output .= "<li><a href='index.php?user_id=$id'>$firstname $lastname</a></li>";
+		$output .= "<$tag>";
+		$output .= "<a href='index.php?user_id=$id'>$firstname $lastname</a>";
+		$output .= "</$tag>";
+		//echo $output;
 	}
-	$output .= "</ul>";
+
+	if ($data == 'others') {
+		$output .= "<$tag class='logout'>";
+		$output .= "<a href='index.php'>Log Out</a>";
+		$output .= "</$tag>";
+	}
+	if ($tag == 'li') {
+		$output .= "<ul>";
+	}
 	$stmt->close();
 	return $output;
 }
