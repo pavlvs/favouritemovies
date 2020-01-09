@@ -1,1 +1,7 @@
 .phpintel
+test_keys.json
+testing_keys.json
+vendor
+build
+docs/_build
+*.swp
