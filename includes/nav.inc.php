@@ -39,3 +39,20 @@ default:
         <li><a href="admin.php?page=movies">Manage movies</a></li>
     </ul>
 </nav>
+
+<?php
+if ($testUsers == 'no_id') {
+	echo "<div class='message'>";
+	echo "<h2>Choose one of the movie-goers from the menu on the right</h2>";
+	echo "</div>";
+	include 'footer.inc.php';
+	exit;
+}
+if ($testUsers == 'invalid_id') {
+	echo "<div class='message alert'>";
+	echo "<h2>Invalid user ID: Choose one of the movie-goers from the menu on the right</h2>";
+	echo "</div>";
+	include 'footer.inc.php';
+	exit;
+}
+?>

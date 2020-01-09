@@ -5,6 +5,7 @@ set_include_path('./includes' . PATH_SEPARATOR . './functions');
 // Functions
 require_once 'test-users.fn.php';
 require_once 'show-users.fn.php';
+require_once 'show-movies.fn.php';
 
 // Includes
 require_once 'connect.inc.php';
