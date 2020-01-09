@@ -1,5 +1,4 @@
 .phpintel
-node_modules
 test_keys.json
 testing_keys.json
 vendor
