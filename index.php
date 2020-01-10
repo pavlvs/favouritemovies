@@ -14,7 +14,7 @@ require_once 'get-variables.inc.php';
 require_once 'head.inc.php';
 require_once 'header.inc.php';
 require_once 'nav.inc.php';
-require_once 'movies.inc.php';
+require_once 'main.inc.php';
 
 require_once 'includes/footer.inc.php';
 ?>

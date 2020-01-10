@@ -84,12 +84,14 @@ ul.admin_menu a {
     color: #FFF;
 }
 
-.admin_users {
+.admin_users,
+.admin_movies {
     margin-left: 50px;
     margin-top: 40px;
 }
 
-.admin_users h2 {
+.admin_users h2,
+.admin_movies h2 {
     font-size: 1.25em;
     margin-bottom: 20px;
 }

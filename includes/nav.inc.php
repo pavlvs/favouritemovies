@@ -2,7 +2,7 @@
 $testUsers = testUsers();
 switch ($testUsers) {
 case 'no_data':
-	$heading = "<h2><a href='admin.php?page=users'>Add movie-goers</a></h2>";
+	$heading = "<h2><a href='index.php?page=users'>Add movie-goers</a></h2>";
 	$usersList = "";
 	$loggedState = "logged_out";
 	break;
@@ -37,8 +37,8 @@ case 'id_set':
 <?php echo $usersList; ?>
 
     <ul class="admin_menu">
-        <li><a href="admin.php?page=users">Manage users</a></li>
-        <li><a href="admin.php?page=movies">Manage movies</a></li>
+        <li><a href="index.php?page=users">Manage users</a></li>
+        <li><a href="index.php?page=movies">Manage movies</a></li>
     </ul>
 </nav>
 

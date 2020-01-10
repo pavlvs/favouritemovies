@@ -1,11 +1,11 @@
 <?php
 
-// Called in movies.inc.php
+// Called in main.inc.php
 
 function testMovies() {
 	global $db, $movieID;
 
-	$sql = "SELECT * FROM movies";
+	$sql = "SELECT * FROM `movies`";
 	$result = $db->query($sql);
 	$numrows = $result->num_rows;
 

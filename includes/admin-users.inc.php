@@ -1,6 +1,8 @@
         <section class="admin">
             <div class="admin_users">
-                <h2>Manage users</h2>
+                <?php if ($testUsers != 'no_data'): ?>
+                    <h2>Manage users</h2>
+                <?php endif?>
                 <table class="admin_table">
                     <tr>
                         <th class="data_col">Firstname</th>
@@ -21,7 +23,7 @@
                         <td><input class="newdata" type="text" name="firstname" value=""></td>
                         <td><input class="newdata" type="text" name="lastname" value=""></td>
                         <td class="insertcell"><div class="insert"></div></td>
-                    </tr>                
+                    </tr>
                 </table>
             </div>
         </section>

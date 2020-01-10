@@ -3,17 +3,6 @@ $favsList = showMovies('favs');
 $nonFavsList = showMovies('non_favs');
 $testMovies = testMovies();
 switch ($testMovies) {
-case 'no_movies':
-	echo "<section class='movie_list'>";
-	echo showUsers('get_name');
-	echo "<div class='message alert'>";
-	echo "<h2>There are no movies at this time.</h2>";
-	echo "</div>";
-	echo "</section>";
-	include 'includes/footer.inc.php';
-	exit;
-	break;
-
 case 'invalid_id':
 	echo "<div class='message alert'>";
 	echo "<h2 class=''>Invalid movie ID: Choose a movie-goer from the menu on the right</h2>";
@@ -31,17 +20,23 @@ case 'id_set':
 	break;
 }
 
-?>
+if ($testMovies == "no_movies") {
+	echo "<div class='message alert'>";
+	echo "<h2>No movies in the database: Add movies below</h2>";
+	echo "</div>";
+	include 'admin-movies.inc.php';
+	include 'footer.inc.php';
+	exit;
+} else {
+	echo "<nav class='favs_list'>";
+	echo "<h2>Favourites</h2>";
+	echo "<ul class='favs'>";
+	echo $favsList;
+	echo "</ul>";
+	echo "<div class='trash'></div>";
+	echo "</nav>";
+}
 
-<nav class="favs_list">
-    <h2>Favourites</h2>
-    <ul class="favs">
-        <?php echo $favsList; ?>
-    </ul>
-    <div class="trash"></div>
-</nav>
-
-<?php
 if (!isset($movieID)) {
 	// show movie list
 	echo "<section class='movie_list'>";
