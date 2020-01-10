@@ -13,6 +13,7 @@ function showMovies($data) {
 					WHERE `favourites`.`user_id` = ?
 			)
 		ORDER BY `title`");
+		$stmt->bind_param('i', $userID);
 		break;
 
 	case "non_favs":
@@ -22,11 +23,16 @@ function showMovies($data) {
 					WHERE `user_id` = ?
 		)
 		ORDER BY `title`");
+		$stmt->bind_param('i', $userID);
 		break;
 
+	case "single":
+		$stmt = $db->prepare("SELECT * FROM `movies`
+			WHERE `movie_id` = ?");
+		$stmt->bind_param('i', $movieID);
+		break;
 	}
 
-	$stmt->bind_param('i', $userID);
 	$stmt->bind_result($id, $title, $description);
 	$stmt->execute();
 
@@ -64,6 +70,23 @@ function showMovies($data) {
 			$output .= "</figcaption>";
 			$output .= "</figure>";
 			$output .= "</li>";
+			break;
+
+		case 'single':
+			if (file_exists("images-movies/$id-tn.png")) {
+				$image = "images-movies/$id.png";
+			} else {
+				$image = "images-movies/generic.png";
+			}
+
+			$output .= "<img src='$image' alt='$title' class='movie_player'>";
+			$output .= "<h3>$title</h3>";
+			$output .= "<div class='actions'>";
+			$output .= "<div class='add_remove'>";
+			$output .= "<p>Add to/remove from favourites</p>";
+			$output .= "</div>";
+			$output .= "</div>";
+			$output .= "<p class='description'>$description</p>";
 			break;
 		}
 	}
