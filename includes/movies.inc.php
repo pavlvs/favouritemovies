@@ -3,6 +3,17 @@ $favsList = showMovies('favs');
 $nonFavsList = showMovies('non_favs');
 $testMovies = testMovies();
 switch ($testMovies) {
+case 'no_movies':
+	echo "<section class='movie_list'>";
+	echo showUsers('get_name');
+	echo "<div class='message alert'>";
+	echo "<h2>There are no movies at this time.</h2>";
+	echo "</div>";
+	echo "</section>";
+	include 'includes/footer.inc.php';
+	exit;
+	break;
+
 case 'invalid_id':
 	echo "<div class='message alert'>";
 	echo "<h2 class=''>Invalid movie ID: Choose a movie-goer from the menu on the right</h2>";

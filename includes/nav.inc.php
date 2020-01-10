@@ -1,6 +1,12 @@
 <?php
 $testUsers = testUsers();
 switch ($testUsers) {
+case 'no_data':
+	$heading = "<h2><a href='admin.php?page=users'>Add movie-goers</a></h2>";
+	$usersList = "";
+	$loggedState = "logged_out";
+	break;
+
 case 'no_id':
 	$usersList = showUsers('all');
 	$heading = "<h2><a>Choose a movie-goer</a></h2>";
@@ -17,10 +23,6 @@ case 'id_set':
 	$usersList = showUsers('others');
 	$heading = showUsers('current');
 	$loggedState = "logged_in";
-	break;
-
-default:
-	# code...
 	break;
 }
 ?>
@@ -48,10 +50,20 @@ if ($testUsers == 'no_id') {
 	include 'footer.inc.php';
 	exit;
 }
+
 if ($testUsers == 'invalid_id') {
 	echo "<div class='message alert'>";
 	echo "<h2>Invalid user ID: Choose one of the movie-goers from the menu on the right</h2>";
 	echo "</div>";
+	include 'footer.inc.php';
+	exit;
+}
+
+if ($testUsers == 'no_data') {
+	echo "<div class='message alert'>";
+	echo "<h2>No movie-goers in database: Add movie-goers below</h2>";
+	echo "</div>";
+	include 'admin-users.inc.php';
 	include 'footer.inc.php';
 	exit;
 }

@@ -5,6 +5,14 @@
 function testUsers() {
 	global $db, $userID;
 
+	$sql = "SELECT * FROM movie_goers";
+	$result = $db->query($sql);
+	$numrows = $result->num_rows;
+
+	if ($numrows < 1) {
+		return "no_data";
+	}
+
 	if (!isset($userID)) {
 		return "no_id";
 	}
