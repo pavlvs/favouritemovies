@@ -43,6 +43,18 @@ case 'id_set':
 </nav>
 
 <?php
+if ($page == 'users') {
+	include 'admin-users.inc.php';
+	include 'footer.inc.php';
+	exit;
+}
+
+if ($page == 'movies') {
+	include 'admin-movies.inc.php';
+	include 'footer.inc.php';
+	exit;
+}
+
 if ($testUsers == 'no_id') {
 	echo "<div class='message'>";
 	echo "<h2>Choose one of the movie-goers from the menu on the right</h2>";

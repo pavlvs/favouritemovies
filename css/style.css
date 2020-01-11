@@ -372,14 +372,18 @@ ul.favs li a:hover {
     background-position: -21px -130px;
 }
 
-.insert {
+.admin_table .insert {
     background-position: 0 -177px;
     margin-left: 40px;
     width: 20px;
     height: 20px;
 }
 
-.insert:hover {
+.admin_table .description {
+    width: 700px;
+}
+
+.admin_table .insert:hover {
     background-position: -21px -177px;
 }
 
@@ -426,4 +430,12 @@ footer a:hover {
 .message h2 {
     font-size: 1.25em;
     font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.no_bottom_border {
+    border-bottom: none;
 }

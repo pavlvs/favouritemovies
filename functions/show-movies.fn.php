@@ -3,7 +3,7 @@
 // Called in main.inc.php
 
 function showMovies($data) {
-	global $db, $userID, $movieID;
+	global $db, $userID, $movieID, $testFav;
 
 	switch ($data) {
 	case "favs":
@@ -30,6 +30,10 @@ function showMovies($data) {
 		$stmt = $db->prepare("SELECT * FROM `movies`
 			WHERE `movie_id` = ?");
 		$stmt->bind_param('i', $movieID);
+		break;
+
+	case 'admin':
+		$stmt = $db->prepare("SELECT  * FROM  `movies`");
 		break;
 	}
 
@@ -83,11 +87,18 @@ function showMovies($data) {
 			$output .= "<h3>$title</h3>";
 			$output .= "<div class='actions'>";
 			$output .= "<div class='add_remove'>";
-			$output .= "<p>Add to/remove from favourites</p>";
+			$output .= "<p>$testFav</p>";
 			$output .= "</div>";
 			$output .= "</div>";
 			$output .= "<p class='description'>$description</p>";
 			break;
+
+		case 'admin':
+			$output .= "<tr class='datarow'>";
+			$output .= "<td><input class='data' type='text' name='title' value='$title'></td>";
+			$output .= "<td><input class='data description' type='text' name='description' value='$description'></td>";
+			$output .= "<td class='deletecell'><div class='delete'></div></td>";
+			$output .= "</tr>";
 		}
 	}
 	$stmt->close();
