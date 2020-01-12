@@ -1,6 +1,6 @@
 <?php
 
-// Called in nav.inc.php, movie-list.inc.php
+// Called in nav.inc.php, main.inc.php
 
 function showUsers($data) {
 	global $db, $userID;
@@ -28,13 +28,18 @@ function showUsers($data) {
 		$stmt->bind_param('i', $userID);
 		$tag = "h2";
 		break;
+
+	case 'admin':
+		$stmt = $db->PREPARE("SELECT  * FROM `movie_goers`");
+		$tag = "";
+		break;
 	}
 
 	$stmt->bind_result($id, $firstname, $lastname);
 	$stmt->execute();
 
 	if ($tag == 'li') {
-		$output = "<ul class='users_menu'>";
+		$output = "\t\t\t<ul class='users_menu'>\n";
 	} else {
 		$output = "";
 	}
@@ -43,25 +48,36 @@ function showUsers($data) {
 		$firstname = htmlentities($firstname, ENT_QUOTES, "UTF-8");
 		$lastname = htmlentities($lastname, ENT_QUOTES, "UTF-8");
 
-		if ($data == 'get_name') {
-			$output .= "<$tag>";
+		switch ($data) {
+		case 'get_name':
+			$output .= "\t\t\t<$tag>";
 			$output .= "Hi, $firstname $lastname";
-			$output .= "</$tag>";
-		} else {
-			$output .= "<$tag>";
+			$output .= "</$tag>\n\n";
+			break;
+
+		case 'all';case 'current';case 'others':
+			$output .= "\t\t\t\t<$tag>";
 			$output .= "<a href='index.php?user_id=$id'>$firstname $lastname</a>";
-			$output .= "</$tag>";
+			$output .= "</$tag>\n";
+			break;
+
+		case 'admin':
+			$output .= "<tr class='datarow'>";
+			$output .= "<td><input class='data' type='text' name='firstname' value='$firstname'></td>";
+			$output .= "<td><input class='data' type='text' name='lastname' value='$lastname'></td>";
+			$output .= "<td class='deletecell'><div class='delete'></div></td>";
+			$output .= "</tr>";
 		}
 		//echo $output;
 	}
 
 	if ($data == 'others') {
-		$output .= "<$tag class='logout'>";
+		$output .= "\t\t\t\t<$tag class='logout'>";
 		$output .= "<a href='index.php'>Log Out</a>";
-		$output .= "</$tag>";
+		$output .= "</$tag>\n";
 	}
 	if ($tag == 'li') {
-		$output .= "<ul>";
+		$output .= "\t\t\t</ul>\n";
 	}
 	$stmt->close();
 	return $output;

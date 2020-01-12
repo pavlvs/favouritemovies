@@ -48,9 +48,9 @@ function showMovies($data) {
 
 		switch ($data) {
 		case 'favs':
-			$output .= "<li>";
+			$output .= "\t\t\t\t<li id='fav_$id'>";
 			$output .= "<a href='index.php?user_id=$userID&amp;movie_id=$id'>$title</a>";
-			$output .= "</li>";
+			$output .= "</li>\n";
 			break;
 
 		case 'non_favs':
@@ -60,20 +60,20 @@ function showMovies($data) {
 				$image = "images-movies/generic-tn.png";
 			}
 
-			$output .= "<li>";
-			$output .= "<figure>";
-			$output .= "<a href='index.php?user_id=$userID&amp;movie_id=$id'>";
+			$output .= "\t\t\t\t<li id='nonfav_$id'>\n";
+			$output .= "\t\t\t\t\t<figure>\n";
+			$output .= "\t\t\t\t\t\t<a href='index.php?user_id=$userID&amp;movie_id=$id'>";
 			$output .= "<img src='$image' alt='$title' class='thumbnail'>";
-			$output .= "</a>";
-			$output .= "<figcaption>";
-			$output .= "<h3>";
+			$output .= "</a>\n";
+			$output .= "\t\t\t\t\t\t<figcaption>\n";
+			$output .= "\t\t\t\t\t\t\t<h3>";
 			$output .= "<a href='index.php?user_id=$userID&amp;movie_id=$id'>$title</a>";
-			$output .= "</h3>";
-			$output .= "<div class='description'>$description</div>";
-			$output .= "<div class='add_remove favourite'></div>";
-			$output .= "</figcaption>";
-			$output .= "</figure>";
-			$output .= "</li>";
+			$output .= "</h3>\n";
+			$output .= "\t\t\t\t\t\t\t<div class='description'>$description</div>\n";
+			$output .= "\t\t\t\t\t\t\t<div class='add'></div>\n";
+			$output .= "\t\t\t\t\t\t</figcaption>\n";
+			$output .= "\t\t\t\t\t</figure>\n";
+			$output .= "\t\t\t\t</li>\n\n";
 			break;
 
 		case 'single':

@@ -355,7 +355,7 @@ ul.favs li a:hover {
     position: relative;
 }
 
-.movie_list li .add_remove {
+.non_favs .add {
     position: absolute;
     top: 10px;
     right: 30px;

@@ -25,24 +25,23 @@ case 'id_set':
 	$loggedState = "logged_in";
 	break;
 }
-?>
 
-<nav class="navigation">
-    <div class="select_users">
-        <?php echo $heading; ?>
-    </div>
-    <div class="profile <?php echo $loggedState; ?>"></div>
-    <div class="admin_button"></div>
+echo "\t\t<nav class='navigation'>\n";
+echo "\t\t\t<div class='select_users'>\n";
+echo "$heading\n";
+echo "\t\t\t</div>\n\n";
 
-<?php echo $usersList; ?>
+echo "\t\t\t<div class='profile <?php echo $loggedState; ?>'></div>\n";
+echo "\t\t\t<div class='admin_button'></div>\n\n";
 
-    <ul class="admin_menu">
-        <li><a href="index.php?page=users">Manage users</a></li>
-        <li><a href="index.php?page=movies">Manage movies</a></li>
-    </ul>
-</nav>
+echo $usersList;
 
-<?php
+echo "\t\t\t<ul class='admin_menu'>\n";
+echo "\t\t\t\t<li><a href='index.php?page=users'>Manage users</a></li>\n";
+echo "\t\t\t\t<li><a href='index.php?page=movies'>Manage movies</a></li>\n";
+echo "\t\t\t</ul>\n";
+echo "\t\t</nav>\n\n";
+
 if ($page == 'users') {
 	include 'admin-users.inc.php';
 	include 'footer.inc.php';

@@ -42,24 +42,24 @@ case 'invalid_id':
 	break;
 }
 
-echo "<nav class='favs_list'>";
-echo "<h2>$favsTitle</h2>";
-echo "<ul class='favs'>";
+echo "\t\t<nav class='favs_list'>\n";
+echo "\t\t\t<h2>$favsTitle</h2>\n\n";
+echo "\t\t\t<ul class='favs'>\n";
 echo $favsList;
-echo "</ul>";
-echo "<div class='trash $trashClass'></div>";
-echo "</nav>";
+echo "\t\t\t</ul>\n\n";
+echo "\t\t\t<div class='trash $trashClass'></div>\n";
+echo "\t\t</nav>\n\n";
 
 switch ($testMovies) {
 case 'no_id':
-	echo "<section class='movie_list'>";
+	echo "\t\t<section class='movie_list'>\n";
 	$greeting = showUsers('get_name');
 	echo $greeting;
-	echo "<p class='welcome $welcomeClass'>$welcomeMessage</p>";
-	echo $ulOpeningTag;
+	echo "\t\t\t<p class='welcome $welcomeClass'>$welcomeMessage</p>\n\n";
+	echo "\t\t\t$ulOpeningTag\n";
 	echo $nonFavsList;
-	echo $ulClosingTag;
-	echo "</section>";
+	echo "\t\t\t$ulClosingTag\n";
+	echo "\t\t</section>\n";
 	break;
 
 case 'id_set':
