@@ -10,13 +10,13 @@ function testFav() {
 	$stmt->execute();
 	$stmt->store_result();
 	$numrows = $stmt->num_rows;
-	$stmt->close();
 
-	if ($numrows = 0) {
+	if ($numrows == 0) {
 		$output = "Add to favourites";
 	} else {
 		$output = "Remove from favourites";
 	}
 
+	$stmt->close();
 	return $output;
 }

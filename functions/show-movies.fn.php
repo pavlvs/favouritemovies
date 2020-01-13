@@ -83,10 +83,16 @@ function showMovies($data) {
 				$image = "images-movies/generic.png";
 			}
 
+			if ($testFav == 'Add to favourites') {
+				$action = "add";
+			} else {
+				$action = "remove";
+			}
+
 			$output .= "<img src='$image' alt='$title' class='movie_player'>";
-			$output .= "<h3>$title</h3>";
+			$output .= "<h3 id='$id'>$title</h3>";
 			$output .= "<div class='actions'>";
-			$output .= "<div class='add_remove'>";
+			$output .= "<div class='add_remove $action'>";
 			$output .= "<p>$testFav</p>";
 			$output .= "</div>";
 			$output .= "</div>";
