@@ -4,6 +4,7 @@ $(document).ready(function() {
         helper: 'clone',
         drag: function() {
             $('.trash').addClass('trash_hover');
+            console.log('happening');
         } // End drag function
     }); // End draggable
 
@@ -25,6 +26,7 @@ $(document).ready(function() {
                 }, // End data
                 'beforesend': function() {
                     $this.remove();
+                    console.log('happening');
                 }, // End beforeSend
                 'success': function() {
                     $('ul.non_favs').append('<li class=\'movie_list\' id=\'movie_' + $id + '\'>' + $title + '</li>');

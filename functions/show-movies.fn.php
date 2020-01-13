@@ -48,7 +48,7 @@ function showMovies($data) {
 
 		switch ($data) {
 		case 'favs':
-			$output .= "\t\t\t\t<li id='fav_$id'>";
+			$output .= "\t\t\t\t<li title='$description' id='fav_$id'>";
 			$output .= "<a href='index.php?user_id=$userID&amp;movie_id=$id'>$title</a>";
 			$output .= "</li>\n";
 			break;
@@ -60,7 +60,7 @@ function showMovies($data) {
 				$image = "images-movies/generic-tn.png";
 			}
 
-			$output .= "\t\t\t\t<li id='nonfav_$id'>\n";
+			$output .= "\t\t\t\t<li id='nofav_$id'>\n";
 			$output .= "\t\t\t\t\t<figure>\n";
 			$output .= "\t\t\t\t\t\t<a href='index.php?user_id=$userID&amp;movie_id=$id'>";
 			$output .= "<img src='$image' alt='$title' class='thumbnail'>";

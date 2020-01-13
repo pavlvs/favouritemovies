@@ -19,7 +19,7 @@ if ($nonFavsList == "") {
 	$welcomeClass = "no_bottom_border";
 } else {
 	$welcomeMessage = "Here are some movies you might like. Click on the heart icon to add them to your favourites list.";
-	$ulOpeningTag = "<ul class='non_favs>";
+	$ulOpeningTag = "<ul class='non_favs'>";
 	$ulClosingTag = "</ul>";
 	$welcomeClass = "";
 }
