@@ -337,7 +337,8 @@ ul.favs li a:hover {
     height: 60px;
 }
 
-.trash:hover {
+.trash:hover,
+.trash_hover {
     background-position: 0 -61px;
 }
 

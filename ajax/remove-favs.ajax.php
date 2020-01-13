@@ -1,6 +1,6 @@
 <?php
-
-require_once '../php-includes/connect.inc.php';
+echo "I have been summoned";
+require_once '../includes/connect.inc.php';
 
 $userID = $_POST['user_id'];
 $movieID = $_POST['movie_id'];

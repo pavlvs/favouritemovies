@@ -21,8 +21,8 @@ $(document).ready(function() {
 
         // AJAX HERE
         $.ajax({
-            url: 'ajax/add-favs.ajax.php',
-            type: 'POST',
+            url: "ajax/add-favs.ajax.php",
+            type: "POST",
             data: {
                 'movie_id': $id,
                 'user_id': $userID
@@ -45,6 +45,7 @@ $(document).ready(function() {
                 $('ul.favs li#fav_' + $id).draggable({
                     helper: 'clone'
                 });
+                console.log('clicked but not added');
             } // End success
         }); // End Ajax call
     }); // End .non_favs .add click function
