@@ -21,8 +21,8 @@ $(document).ready(function() {
 
         // AJAX HERE
         $.ajax({
-            url: "ajax/add-favs.ajax.php",
-            type: "POST",
+            url: 'ajax/add-favs.ajax.php',
+            type: 'POST',
             data: {
                 'movie_id': $id,
                 'user_id': $userID
@@ -34,7 +34,7 @@ $(document).ready(function() {
             'success': function() {
                 $requestRunning = false;
 
-                $output = '<li title=' + $description + 'id="fav_' + $id + '">';
+                $output = '<li title="' + $description + '" id="fav_' + $id + '">';
                 $output += '<a href="index.php?user_id=';
                 $output += $userID;
                 $output += '&amp;movie_id=' + $id + '">';
@@ -45,7 +45,26 @@ $(document).ready(function() {
                 $('ul.favs li#fav_' + $id).draggable({
                     helper: 'clone'
                 });
-                console.log('clicked but not added');
+
+                $favsLength = $('.favs li').length;
+                $nonFavsLength = $('.non_favs li').length;
+                console.log($favsLength);
+                console.log($nonFavsLength);
+                console.log($('.favs_list h2').text());
+
+                if ($favsLength < 1) {
+                    $('.favs_list h2').text('You have no favourites');
+                    $('p.welcome').text('').addClass('like_none');
+                } else {
+                    $('.favs_list h2').text('Favourites');
+                    if ($nonFavsLength < 1) {
+                        $('p.welcome').text('').addClass('like_all').addClass('no_bottom_border');
+                    } else {
+                        $('p.welcome').text('').addClass('like_some');
+                    }
+
+                    $('.trash').removeClass('hidden');
+                }
             } // End success
         }); // End Ajax call
     }); // End .non_favs .add click function

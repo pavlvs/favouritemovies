@@ -4,24 +4,24 @@ $nonFavsList = showMovies('non_favs');
 $testMovies = testMovies();
 $testFav = testFav();
 
+$welcomeMessage = "Here are some movies you might like. ";
+$welcomeMessage .= "Click on the heart icon to add them to your favourite list.";
+$favsTitle = "Favourites";
+$trashClass = "";
+$openTag = "<ul class='non_favs'>";
+$welcomeClass = "";
+
 if ($favsList == "") {
+	$welcomeMessage = "You haven't got any favourites yet! ";
+	$welcomeMessage .= "Mouse over the movies and click on the heart icon to add them to the list on the left.";
 	$favsTitle = "You have no favourites";
 	$trashClass = "hidden";
-} else {
-	$favsTitle = "Favourites";
-	$trashClass = "";
 }
 
 if ($nonFavsList == "") {
 	$welcomeMessage = "You seem to like all the movies. Drag them to the trashcan to delete them from your favourites.";
-	$ulOpeningTag = "";
-	$ulClosingTag = "";
+	$openTag = "<ul class='non_favs hidden'>";
 	$welcomeClass = "no_bottom_border";
-} else {
-	$welcomeMessage = "Here are some movies you might like. Click on the heart icon to add them to your favourites list.";
-	$ulOpeningTag = "<ul class='non_favs'>";
-	$ulClosingTag = "</ul>";
-	$welcomeClass = "";
 }
 
 switch ($testMovies) {
@@ -56,9 +56,9 @@ case 'no_id':
 	$greeting = showUsers('get_name');
 	echo $greeting;
 	echo "\t\t\t<p class='welcome $welcomeClass'>$welcomeMessage</p>\n\n";
-	echo "\t\t\t$ulOpeningTag\n";
+	echo "\t\t\t$openTag\n";
 	echo $nonFavsList;
-	echo "\t\t\t$ulClosingTag\n";
+	echo "\t\t\t</ul>\n";
 	echo "\t\t</section>\n";
 	break;
 

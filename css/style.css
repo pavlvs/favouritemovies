@@ -440,3 +440,15 @@ footer a:hover {
 .no_bottom_border {
     border-bottom: none;
 }
+
+.like_some:after {
+    content: "Here are some movies you might like . Click on the heart icon to add them to your favourite list.";
+}
+
+.like_all:after {
+    content: "You seem to like all the movies. Drag them to the trashcan to delete them from your favourites.";
+}
+
+.like_none:after {
+    content: "You haven't got any favourites yet! Mouse over the movies and click on the heart icon to add them to the list on the left.";
+}

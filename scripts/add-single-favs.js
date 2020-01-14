@@ -1,10 +1,10 @@
 $(document).ready(function() { // Adds a single movie to the favourites list
-
     $requestRunning = false;
     $(document).on('click', '.actions .add', function() {
         if ($requestRunning) {
             return; //Don't do anything if an AJAX request is running
         }
+
         $this = $(this);
         $id = $('h3').attr('id');
         $description = $('p.description').text();
@@ -17,9 +17,11 @@ $(document).ready(function() { // Adds a single movie to the favourites list
                 'movie_id': $id,
                 'user_id': $userID
             }, // End data
+
             'beforeSend': function() {
                 $requestRunning = true;
             }, // End beforesend
+
             'success': function() {
                 $requestRunning = false;
                 $('.add_remove.add p').text('Remove from favourites');
@@ -37,8 +39,9 @@ $(document).ready(function() { // Adds a single movie to the favourites list
                 $this.html('<p>Remove from favourites</p>')
                     .removeClass('add')
                     .addClass('remove');
-            }
-            // End success
+            } // End success
+
         }); // End Ajax call
+
     }); // End .non_favs .add click function
 }); // End document ready

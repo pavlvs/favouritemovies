@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $requestRunning = false;
 
     $('.favs li').draggable({
         helper: 'clone',
@@ -15,8 +16,6 @@ $(document).ready(function() {
             $id = $id[1];
             $title = $this.text();
             $description = $this.attr('title');
-            console.log($id);
-            console.log($title);
 
             // AJAX HERE
             $.ajax({
@@ -27,7 +26,6 @@ $(document).ready(function() {
                     'user_id': $userID
                 }, // End data
                 'beforeSend': function() {
-                    console.log($userID);
                     $this.remove();
                     $('.trash').addClass('trash_hover');
                 }, // End beforeSend
@@ -49,6 +47,30 @@ $(document).ready(function() {
 
                     $('ul.non_favs').prepend($output);
                     $('.trash').removeClass('trash_hover');
+
+                    $favsLength = $('.favs li').length;
+                    $nonFavsLength = $('.non_favs li').length;
+                    console.log($favsLength);
+                    console.log($nonFavsLength);
+                    console.log($('.favs_list h2').text());
+
+                    if ($favsLength < 1) {
+                        $('.favs_list h2').text('You have no favourites');
+                        $('p.welcome').text('').addClass('like_none');
+                        $('.trash').addClass('hidden');
+                    } else {
+                        $('.favs_list h2').text('Favourites');
+                        if ($nonFavsLength < 1) {
+                            $('p.welcome').text('')
+                                .removeClass('like_some')
+                                .addClass('like_all');
+                        } else {
+                            $('p.welcome').text('')
+                                .removeClass('like_all')
+                                .addClass('like_some');
+                        }
+                        $('.trash').removeClass('hidden');
+                    }
                 } // End success
             }); // End Ajax
 
