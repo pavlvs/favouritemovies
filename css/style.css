@@ -442,7 +442,7 @@ footer a:hover {
 }
 
 .like_some:after {
-    content: "Here are some movies you might like . Click on the heart icon to add them to your favourite list.";
+    content: "Here are some movies you might like. Click on the heart icon to add them to your favourite list.";
 }
 
 .like_all:after {

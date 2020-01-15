@@ -48,9 +48,6 @@ $(document).ready(function() {
 
                 $favsLength = $('.favs li').length;
                 $nonFavsLength = $('.non_favs li').length;
-                console.log($favsLength);
-                console.log($nonFavsLength);
-                console.log($('.favs_list h2').text());
 
                 if ($favsLength < 1) {
                     $('.favs_list h2').text('You have no favourites');
@@ -58,11 +55,10 @@ $(document).ready(function() {
                 } else {
                     $('.favs_list h2').text('Favourites');
                     if ($nonFavsLength < 1) {
-                        $('p.welcome').text('').addClass('like_all').addClass('no_bottom_border');
+                        $('p.welcome').text('').addClass('like_all no_bottom_border');
                     } else {
                         $('p.welcome').text('').addClass('like_some');
                     }
-
                     $('.trash').removeClass('hidden');
                 }
             } // End success

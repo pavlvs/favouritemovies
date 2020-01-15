@@ -25,6 +25,17 @@ $(document).ready(function() { // Removes single movie from favourites list
                     .removeClass('remove')
                     .addClass('add');
                 $('li#fav_' + $id).remove();
+
+                $favsLength = $('.favs li').length;
+                $nonFavsLength = $('.non_favs li').length;
+
+                if ($favsLength < 1) {
+                    $('.favs_list h2').text('You have no favourites');
+                    $('.trash').addClass('hidden');
+                } else {
+                    $('.favs_list h2').text('Favourites');
+                    $('.trash').removeClass('hidden');
+                }
             } // End success
         }); // End Ajax
     }); // End click

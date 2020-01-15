@@ -50,9 +50,6 @@ $(document).ready(function() {
 
                     $favsLength = $('.favs li').length;
                     $nonFavsLength = $('.non_favs li').length;
-                    console.log($favsLength);
-                    console.log($nonFavsLength);
-                    console.log($('.favs_list h2').text());
 
                     if ($favsLength < 1) {
                         $('.favs_list h2').text('You have no favourites');
