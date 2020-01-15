@@ -30,6 +30,10 @@ $(document).ready(function() {
             'beforeSend': function() {
                 $requestRunning = true;
                 $this_li.remove();
+
+                $('.highlight').removeClass('highlight');
+                $('.loader_large').removeClass('hidden');
+                $('html').not('.loader_large').addClass('dim');
             }, // End beforesend
             'success': function() {
                 $requestRunning = false;
@@ -44,6 +48,13 @@ $(document).ready(function() {
                 $('ul.favs').append($output);
                 $('ul.favs li#fav_' + $id).draggable({
                     helper: 'clone'
+                });
+
+                $this_added = $('li#fav_' + $id);
+                $this_added.addClass('highlight');
+
+                $('.favs li').mouseover(function() {
+                    $('.highlight').removeClass('highlight');
                 });
 
                 $favsLength = $('.favs li').length;
@@ -61,6 +72,8 @@ $(document).ready(function() {
                     }
                     $('.trash').removeClass('hidden');
                 }
+                $('.loader_large').addClass('hidden');
+                $('html').not('.loader_large').removeClass('dim');
             } // End success
         }); // End Ajax call
     }); // End .non_favs .add click function

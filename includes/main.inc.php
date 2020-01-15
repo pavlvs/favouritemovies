@@ -60,6 +60,7 @@ case 'no_id':
 	echo $nonFavsList;
 	echo "\t\t\t</ul>\n";
 	echo "\t\t</section>\n";
+	echo "\t\t<div class='loader_large hidden'></div>\n\n";
 	break;
 
 case 'id_set':
@@ -67,6 +68,7 @@ case 'id_set':
 	$singleMovie = showMovies('single');
 	echo $singleMovie;
 	echo "</section>";
+	echo "\t\t<div class='loader_large hidden'></div>\n\n";
 	break;
 }
 ?>

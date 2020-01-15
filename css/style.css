@@ -388,11 +388,24 @@ ul.favs li a:hover {
     background-position: -21px -177px;
 }
 
-.admin_table .success {
+.success {
     background-position: -42px -177px;
+}
+
+.admin_table .success {
     margin-left: 40px;
     width: 40px;
     height: 20px;
+}
+
+.non_favs .success {
+    width: 20px;
+    height: 20px;
+}
+
+.favs .highlight {
+    background-color: orange;
+    border: 1px solid red;
 }
 
 footer {
@@ -451,4 +464,17 @@ footer a:hover {
 
 .like_none:after {
     content: "You haven't got any favourites yet! Mouse over the movies and click on the heart icon to add them to the list on the left.";
+}
+
+.loader_large {
+    background-image: url('../images/loader-large.png');
+    position: absolute;
+    left: 500px;
+    top: 430px;
+    height: 50px;
+    width: 50px;
+}
+
+.dim {
+    opacity: 0.5;
 }

@@ -20,6 +20,8 @@ $(document).ready(function() { // Adds a single movie to the favourites list
 
             'beforeSend': function() {
                 $requestRunning = true;
+                $('.loader_large').removeClass('hidden');
+                $('html').not('.loader_large').addClass('dim');
             }, // End beforesend
 
             'success': function() {
@@ -36,6 +38,14 @@ $(document).ready(function() { // Adds a single movie to the favourites list
                 $('ul.favs li#fav_' + $id).draggable({
                     helper: 'clone'
                 });
+
+                $this_added = $('li#fav_' + $id);
+                $this_added.addClass('highlight');
+
+                $('.favs li').mouseover(function() {
+                    $('.highlight').removeClass('highlight');
+                });
+
                 $this.html('<p>Remove from favourites</p>')
                     .removeClass('add')
                     .addClass('remove');
@@ -49,7 +59,10 @@ $(document).ready(function() { // Adds a single movie to the favourites list
                 } else {
                     $('.favs_list h2').text('Favourites');
                     $('.trash').removeClass('hidden');
+
                 }
+                $('.loader_large').addClass('hidden');
+                $('html').not('.loader_large').removeClass('dim');
             } // End success
 
         }); // End Ajax call
