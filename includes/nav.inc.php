@@ -36,7 +36,7 @@ echo "\t\t\t<div class='admin_button'></div>\n\n";
 
 echo $usersList;
 
-echo "\t\t\t<ul class='admin_menu'>\n";
+echo "\t\t\t<ul class='admin_menu hidden'>\n";
 echo "\t\t\t\t<li><a href='index.php?page=users'>Manage users</a></li>\n";
 echo "\t\t\t\t<li><a href='index.php?page=movies'>Manage movies</a></li>\n";
 echo "\t\t\t</ul>\n";

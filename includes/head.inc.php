@@ -14,6 +14,7 @@
     <script src = "scripts/add-single-favs.js"></script>
     <script src = "scripts/remove-favs.js"></script>
     <script src = "scripts/remove-single-favs.js"></script>
+    <script src = "scripts/navigation.js"></script>
 
     <title>Instant Update Database Project</title>
 </head>

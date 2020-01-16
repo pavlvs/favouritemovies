@@ -46,7 +46,7 @@ ul.users_menu {
 }
 
 ul.admin_menu {
-    display: none;
+    /* display: none; */
     width: 150px;
 }
 
