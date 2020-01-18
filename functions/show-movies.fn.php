@@ -100,11 +100,11 @@ function showMovies($data) {
 			break;
 
 		case 'admin':
-			$output .= "<tr class='datarow'>";
-			$output .= "<td><input class='data' type='text' name='title' value='$title'></td>";
-			$output .= "<td><input class='data description' type='text' name='description' value='$description'></td>";
-			$output .= "<td class='deletecell'><div class='delete'></div></td>";
-			$output .= "</tr>";
+			$output .= "\t\t\t\t\t<tr id='movie_$id' class='datarow'>\n";
+			$output .= "\t\t\t\t\t\t<td><input class='data' type='text' name='title' value='$title'></td>\n";
+			$output .= "\t\t\t\t\t\t<td><input class='data description' type='text' name='description' value='$description'></td>\n";
+			$output .= "\t\t\t\t\t\t<td class='deletecell'><div class='delete hidden'></div></td>\n";
+			$output .= "\t\t\t\t\t</tr>\n\n";
 		}
 	}
 	$stmt->close();

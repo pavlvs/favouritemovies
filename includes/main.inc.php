@@ -51,7 +51,7 @@ echo "\t\t\t<div class='trash $trashClass'></div>\n";
 echo "\t\t</nav>\n\n";
 
 switch ($testMovies) {
-case 'no_id':
+case 'no_id': // show the list of movies that are not yet favourites
 	echo "\t\t<section class='movie_list'>\n";
 	$greeting = showUsers('get_name');
 	echo $greeting;
@@ -63,7 +63,7 @@ case 'no_id':
 	echo "\t\t<div class='loader_large hidden'></div>\n\n";
 	break;
 
-case 'id_set':
+case 'id_set': // show a single movie chosen from either list
 	echo "<section class='movie_single'>";
 	$singleMovie = showMovies('single');
 	echo $singleMovie;

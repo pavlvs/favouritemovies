@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $(document).on('mouseover mouseout', '.non_favs li', function() {
-        $('.add', this).toggleClass('favourite');
+        $('.add', this).removeClass('favourite');
         //foo
     });
 

@@ -52,7 +52,7 @@ function showUsers($data) {
 		case 'get_name':
 			$output .= "\t\t\t<$tag>";
 			$output .= "Hi, $firstname $lastname";
-			$output .= "</$tag>\n\n";
+			$output .= "</$tag>\n";
 			break;
 
 		case 'all';case 'current';case 'others':
@@ -62,11 +62,11 @@ function showUsers($data) {
 			break;
 
 		case 'admin':
-			$output .= "<tr class='datarow'>";
-			$output .= "<td><input class='data' type='text' name='firstname' value='$firstname'></td>";
-			$output .= "<td><input class='data' type='text' name='lastname' value='$lastname'></td>";
-			$output .= "<td class='deletecell'><div class='delete'></div></td>";
-			$output .= "</tr>";
+			$output .= "\t\t\t\t\t<tr id='user_$id' class='datarow'>\n";
+			$output .= "\t\t\t\t\t\t<td><input class='data' type='text' name='firstname' value='$firstname'></td>\n";
+			$output .= "\t\t\t\t\t\t<td><input class='data' type='text' name='lastname' value='$lastname'></td>\n";
+			$output .= "\t\t\t\t\t\t<td class='deletecell'><div class='delete hidden'></div></td>\n";
+			$output .= "\t\t\t\t\t</tr>\n";
 		}
 		//echo $output;
 	}

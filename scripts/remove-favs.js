@@ -48,8 +48,6 @@ $(document).ready(function() {
                     $output += '</figcaption>';
                     $output += '</figure>';
                     $output += '</li>';
-                    console.log($output);
-                    console.log('doing it');
                     $('ul.non_favs').prepend($output);
 
                     $this_added = $('li#nonfav_' + $id + ' .add');
@@ -63,7 +61,6 @@ $(document).ready(function() {
 
                     $favsLength = $('.favs li').length;
                     $nonFavsLength = $('.non_favs li').length;
-                    console.log($nonFavsLength);
 
                     if ($favsLength < 1) {
                         $('.favs_list h2').text('You have no favourites');

@@ -475,6 +475,13 @@ footer a:hover {
     width: 50px;
 }
 
+.loader_small {
+    background-image: url('../images/loader_small.png');
+    margin-left: 40px;
+    height: 25px;
+    width: 25px;
+}
+
 .dim {
     opacity: 0.5;
 }
