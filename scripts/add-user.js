@@ -29,10 +29,12 @@ $(function() {
                 $this.removeClass('insert').addClass('loader_small');
                 $('.delete').removeClass('success').addClass('hidden');
             },
-            'success': function() {
+            'success': function(response) {
+                $userID = response;
+
                 $('input.newdata').val('');
 
-                $output = '<tr class="datarow">';
+                $output = '<tr class="datarow" id="user_' + $userID + '">';
                 $output += '<td><input class="data" type="text" name="firstname" value="' + $firstname + '"></td>';
                 $output += '<td><input class="data" type="text" name="lastname" value="' + $lastname + '"></td>';
                 $output += '<td class="deletecell"><div class="delete hidden"></div></td>';
@@ -40,7 +42,7 @@ $(function() {
 
                 $('.admin_table tr:last').before($output);
 
-                $output = '<li>';
+                $output = '<li id="userlist_' + $userID + '">';
                 $output += '<a href="index.php">' + $firstname + ' ' + $lastname + '</a>';
                 $output += '</li>';
 

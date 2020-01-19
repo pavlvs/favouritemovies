@@ -21,7 +21,7 @@ $(document).ready(function() {
                 $this.removeClass('delete').addClass('loader_small');
             }, // End beforesend
             'success': function() {
-                $('tr#user_' + $id).remove();
+                $('tr#user_' + $id + ', li#userlist_' + $id).remove();
             } // End success
         }); // End delete ajax
     });

@@ -56,7 +56,7 @@ function showUsers($data) {
 			break;
 
 		case 'all';case 'current';case 'others':
-			$output .= "\t\t\t\t<$tag>";
+			$output .= "\t\t\t\t<$tag id='userlist_$id'>";
 			$output .= "<a href='index.php?user_id=$id'>$firstname $lastname</a>";
 			$output .= "</$tag>\n";
 			break;
