@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>var $movieID = "<?php echo $movieID; ?>"</script>
     <script src = "scripts/navigation.js"></script>
+    <script src = "scripts/jquery.tinysort.min.js"></script>
 
 <?php
 if (isset($userID)) {
@@ -25,6 +26,7 @@ if (isset($userID)) {
 
 if ($page == 'users') {?>
     <script src="scripts/delete-user.js"></script>
+    <script src="scripts/add-user.js"></script>
 <?php
 }
 

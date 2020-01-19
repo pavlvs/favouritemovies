@@ -18,7 +18,7 @@ echo $dataRow;
 echo "\t\t\t\t\t<tr class='newdatarow'>\n";
 echo "\t\t\t\t\t\t<td><input class='newdata' type='text' name='firstname' value=''></td>\n";
 echo "\t\t\t\t\t\t<td><input class='newdata' type='text' name='lastname' value=''></td>\n";
-echo "\t\t\t\t\t\t<td class='insertcell'><div class='insert'></div></td>\n";
+echo "\t\t\t\t\t\t<td class='insertcell'><div class='insert hidden'></div></td>\n";
 echo "\t\t\t\t\t</tr>\n";
 echo "\t\t\t\t</table>\n";
 echo "\t\t\t</div>\n";
