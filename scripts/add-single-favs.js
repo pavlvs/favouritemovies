@@ -26,6 +26,10 @@ $(document).ready(function() { // Adds a single movie to the favourites list
 
             'success': function() {
                 $requestRunning = false;
+
+                $description = $description.replace(/'/g, '&apos;');
+                $title = $title.replace(/'/g, '&apos;');
+
                 $('.add_remove.add p').text('Remove from favourites');
                 $output = '<li title=' + $description + ' id="fav_' + $id + '">';
                 $output += '<a href="index.php?user_id=';

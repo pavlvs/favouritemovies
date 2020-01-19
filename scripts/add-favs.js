@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $(document).on('mouseover mouseout', '.non_favs li', function() {
-        $('.add', this).removeClass('favourite');
+        $('.add', this).toggleClass('favourite');
         //foo
     });
 
@@ -37,6 +37,9 @@ $(document).ready(function() {
             }, // End beforesend
             'success': function() {
                 $requestRunning = false;
+
+                $description = $description.replace(/'/g, '&apos;');
+                $title = $title.replace(/'/g, '&apos;');
 
                 $output = '<li title="' + $description + '" id="fav_' + $id + '">';
                 $output += '<a href="index.php?user_id=';
