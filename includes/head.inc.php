@@ -32,6 +32,7 @@ if ($page == 'users') {?>
 
 if ($page == 'movies') {?>
     <script src="scripts/delete-movie.js"></script>
+    <script src="scripts/add-movie.js"></script>
 <?php
 }?>
 

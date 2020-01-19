@@ -13,9 +13,9 @@ echo "\t\t\t\t\t\t<th class='admin_col'>Insert/Delete</th>\n";
 echo "\t\t\t\t\t</tr>\n\n";
 echo $dataRow;
 echo "\t\t\t\t\t<tr class='datarow'>\n";
-echo "\t\t\t\t\t\t<td><input class='data' type='text' name='title' value=''></td>\n";
-echo "\t\t\t\t\t\t<td><input class='data' type='text' name='description' value=''></td>\n";
-echo "\t\t\t\t\t\t<td class='insertcell'><div class='insert'></div></td>\n";
+echo "\t\t\t\t\t\t<td><input class='newdata' type='text' name='title' value=''></td>\n";
+echo "\t\t\t\t\t\t<td><input class='newdata' type='text' name='description' value=''></td>\n";
+echo "\t\t\t\t\t\t<td class='insertcell'><div class='insert hidden'></div></td>\n";
 echo "\t\t\t\t\t</tr>\n";
 
 echo "\t\t\t\t</table>\n";
